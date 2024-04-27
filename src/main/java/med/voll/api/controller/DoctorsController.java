@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import med.voll.api.domain.Doctor;
+
 @RestController
 @RequestMapping("/doctors")
 public class DoctorsController {
@@ -16,8 +18,8 @@ public class DoctorsController {
     }
 
     @PostMapping
-    public String saveDoctor(@RequestBody String json) {
-        return "Request body sent: " + json;
+    public String saveDoctor(@RequestBody Doctor d) {
+        return "Doctor: " + d;
     }
 
 }
