@@ -12,14 +12,14 @@ import med.voll.api.domain.Doctor;
 @RequestMapping("/doctors")
 public class DoctorsController {
 
-    @GetMapping
-    public String getDoctors() {
-        return "Doctors will be returned";
+    @PostMapping
+    public String create(@RequestBody Doctor d) {
+        return "Doctor: " + d;
     }
 
-    @PostMapping
-    public String saveDoctor(@RequestBody Doctor d) {
-        return "Doctor: " + d;
+    @GetMapping
+    public String read() {
+        return "Doctors will be returned";
     }
 
 }
