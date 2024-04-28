@@ -6,20 +6,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import med.voll.api.dto.DoctorDTO;
+import med.voll.api.dto.PatientDTO;
 
 @RestController
-@RequestMapping("/doctors")
-public class DoctorsController {
+@RequestMapping("patients")
+public class PatientController {
 
     @PostMapping
-    public String create(@RequestBody DoctorDTO d) {
-        return "Doctor: " + d;
+    public String create(@RequestBody PatientDTO p) {
+        return "Patient: " + p;
     }
 
     @GetMapping
     public String read() {
-        return "Doctors will be returned";
+        return "Patients will be returned";
     }
 
 }
