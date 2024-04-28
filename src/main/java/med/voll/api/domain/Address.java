@@ -4,6 +4,7 @@ import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.dto.AddressDTO;
 
 @Embeddable
 @Getter
@@ -14,5 +15,11 @@ public class Address {
     private String streetAddress;
     private String addressLine2;
     private String city;
+
+    public Address(AddressDTO dto) {
+        this.streetAddress = dto.streetAddress();
+        this.addressLine2 = dto.addressLine2();
+        this.city = dto.city();
+    }
 
 }

@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.dto.PatientDTO;
 
 @Table(name = "patients")
 @Entity
@@ -26,5 +27,10 @@ public class Patient {
 
     @Embedded
     private Address address;
+
+    public Patient(PatientDTO dto) {
+        this.name = dto.name();
+        this.address = new Address(dto.address());
+    }
 
 }

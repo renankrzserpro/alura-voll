@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.dto.DoctorDTO;
 
 @Table(name = "doctors")
 @Entity
@@ -30,5 +31,11 @@ public class Doctor {
 
     @Embedded
     private Address address;
+
+    public Doctor(DoctorDTO dto) {
+        this.name = dto.name();
+        this.specialty = dto.specialty();
+        this.address = new Address(dto.address());
+    }
 
 }
