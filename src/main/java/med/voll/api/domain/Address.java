@@ -1,4 +1,9 @@
 package med.voll.api.domain;
 
-public record Address(String streetAddress, String addressLine2, String city) {
+public class Address {
+
+    private String streetAddress;
+    private String addressLine2;
+    private String city;
+
 }

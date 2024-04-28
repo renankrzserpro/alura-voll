@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import med.voll.api.domain.Patient;
+import med.voll.api.dto.PatientDTO;
 
 @RestController
 @RequestMapping("patients")
 public class PatientsController {
 
     @PostMapping
-    public String create(@RequestBody Patient p) {
+    public String create(@RequestBody PatientDTO p) {
         return "Patient: " + p;
     }
 
