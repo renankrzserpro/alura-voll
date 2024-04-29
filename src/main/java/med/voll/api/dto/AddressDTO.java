@@ -1,4 +1,9 @@
 package med.voll.api.dto;
 
-public record AddressDTO(String streetAddress, String addressLine2, String city) {
+import jakarta.validation.constraints.NotBlank;
+
+public record AddressDTO(
+        @NotBlank String streetAddress,
+        @NotBlank String addressLine2,
+        @NotBlank String city) {
 }

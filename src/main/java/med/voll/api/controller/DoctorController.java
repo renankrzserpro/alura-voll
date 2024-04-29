@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
 import med.voll.api.domain.Doctor;
 import med.voll.api.dto.DoctorDTO;
 import med.voll.api.repository.DoctorRepository;
@@ -21,7 +22,7 @@ public class DoctorController {
 
     @PostMapping
     @Transactional
-    public void create(@RequestBody DoctorDTO d) {
+    public void create(@RequestBody @Valid DoctorDTO d) {
         repository.save(new Doctor(d));
     }
 
