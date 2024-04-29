@@ -1,5 +1,7 @@
 package med.voll.api.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,8 +29,8 @@ public class PatientController {
     }
 
     @GetMapping
-    public String read() {
-        return "Patients will be returned";
+    public List<Patient> readAll() {
+        return repository.findAll();
     }
 
 }
