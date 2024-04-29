@@ -2,6 +2,7 @@ package med.voll.api.domain;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,7 +27,7 @@ public class Doctor {
     private Long id;
     private String name;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Specialty specialty;
 
     @Embedded
