@@ -1,5 +1,6 @@
 package med.voll.api.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,6 +14,7 @@ import med.voll.api.dto.AddressDTO;
 public class Address {
 
     private String streetAddress;
+    @Column(name = "address_line_2")
     private String addressLine2;
     private String city;
 
